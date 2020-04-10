@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Jionyeshe-Signup {% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Sign Up</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">Sign up</button>
+            </div>
+            <p class="aligncenter margintop20">
+                Already have an account? <a href="{% url 'login' %}" data-dismiss="modal" aria-hidden="true" data-toggle="modal">Sign in</a>
+            </p>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

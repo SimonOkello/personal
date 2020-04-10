@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- end header -->
+  <section id="inner-headline">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="inner-heading">
+            <h2><b>{% if user.is_authenticated %}{{user.username}}{% endif %}</b></h2>
+            <p>Software Developer<b></b></p>
+          </div>
+        </div>
+        <div class="span8">
+          <ul class="breadcrumb">
+            <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+            <li><a href="#">Profile</a><i class="icon-angle-right"></i></li>
+            <li class="active">Profile detail</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="content">
+    <div class="container">
+      <div class="row">
+        <div class="span8">
+          <article>
+            <div class="row">
+                    <div class="content">
+                        <div class="module">
+                            <div class="module-body">
+                                <div class="profile-head media">
+                                    <a href="#" class="media-avatar pull-left">
+                                        <img src="{% static 'img/avatar.png' %} ">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4>
+                                            {% if user.is_authenticated %}{{user.username}}{% endif %} <small>Offline</small>
+                                        </h4>
+                                        <p class="profile-brief">
+                                            Thinking “out of the box” to provide software-based solutions
+
+Strong in design and integration problem-solving skills. Expert in Java, C#, .NET, and T-SQL with database analysis and design. 
+Skilled in developing business plans, requirements specifications, user documentation, and architectural systems research. Strong written and verbal communications.
+                                        </p>
+                                        <div class="profile-details muted">
+                                            <a href="#" class="btn"><i class="icon-plus shaded"></i>Edit Profile </a>
+                                            <a href="#" class="btn"><i class="icon-envelope-alt shaded"></i>messages </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="profile-tab nav nav-tabs">
+                                    <li class="active"><a href="#skills" data-toggle="tab">Skills</a></li>
+                                    <li><a href="#aboutme" data-toggle="tab">About Me</a></li>
+                                </ul>
+                                <div class="profile-tab-content tab-content">
+                                    <div class="tab-pane fade active in" id="skills">
+                                        <div class="stream-list">
+                                            <div class="media stream">
+                                                <!-- <a href="#" class="media-avatar medium pull-left">
+                                                    <img src="images/user.png">
+                                                </a> -->
+                                                <div class="media-body">
+                                                    <div class="span6">
+                                                  <label>Web design:</label>
+                                                  <div class="progress progress-info progress-striped active">
+                                                    <div class="bar" style="width: 90%">
+                                                    </div>
+                                                  </div>
+                                                  <label>Wordpress :</label>
+                                                  <div class="progress progress-success progress-striped active">
+                                                    <div class="bar" style="width: 60%">
+                                                    </div>
+                                                  </div>
+                                                  <label>Photoshop :</label>
+                                                  <div class="progress progress-warning progress-striped active">
+                                                    <div class="bar" style="width: 80%">
+                                                    </div>
+                                                  </div>
+                                                  <label>Ilustrator :</label>
+                                                  <div class="progress progress-danger progress-striped active">
+                                                    <div class="bar" style="width: 40%">
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <!--/.media .stream-->
+                                        </div>
+                                        <!--/.stream-list-->
+                                    </div>
+                                    <div class="tab-pane fade" id="aboutme">
+                                        <div class="module-option clearfix">
+                                          heey
+                                        </div>
+                                        <div class="module-body">
+                                              heey
+		                                    </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.module-body-->
+                        </div>
+                        <!--/.module-->
+                    </div>
+                    <!--/.content-->
+                <!--/.span9-->
+            </div>
+            <br>
+            <!-- divider -->
+            <div class="row">
+              <div class="span7">
+                <div class="solidline">
+                </div>
+              </div>
+            </div>
+            <!-- end divider -->
+
+            <div class="row">
+              <div class="span8">
+                <h4><strong>Clients</strong></h4>
+                <ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client1.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client2.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client3.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client4.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client5.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client6.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client1.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client2.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client3.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client4.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client5.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                  <li>
+                    <a href="#">
+              <img src="{% static 'img/dummies/clients/client6.png' %}" class="client-logo" alt="" />
+              </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+    
+            
+            <div class="solidline">
+
+
+            
+
+          </article>
+        </div>
+        <div class="span4">
+          <aside class="right-sidebar">
+            <div class="widget">
+              <h5 class="widgetheading"><b>Project Categories</b></h5>
+              {% for category in cat_lists %}
+              <ul class="cat">
+                <li><i class="icon-angle-right"></i><a href="{% url 'category' category.id %}">{{category.name}}</a><span></span></li>
+              </ul>
+              {% endfor %}
+            </div>
+            <div class="widget">
+              <h5 class="widgetheading"><b>Reviews</b></h5>
+              <div class="media">
+              <a href="#" class="thumbnail pull-left"><img src="{% static 'img/avatar.png' %}" alt="" /></a>
+              <div class="media-body">
+                <div class="media-content">
+                  <h6><span>April 20, 2020</span> | Karen medisson</h6>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  </p>
+                  <!-- <a href="#" class="align-right">Reply comment</a> -->
+                </div>
+              </div>
+            </div>
+            <div class="media">
+              <a href="#" class="thumbnail pull-left"><img src="{% static 'img/avatar.png' %}" alt="" /></a>
+              <div class="media-body">
+                <div class="media-content">
+                  <h6><span>March 20, 2020</span> |  Karen medisson</h6>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                  </p>
+                  <!-- <a href="#" class="align-right">Reply comment</a> -->
+                </div>
+              </div>
+            </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

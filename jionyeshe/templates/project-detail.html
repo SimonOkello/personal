@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Jionyeshe-Project details {% endblock %}
+{% block content %}
+    <section id="inner-headline">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="inner-heading">
+              <ul class="breadcrumb">
+                <li><h3><a href="#">{{project.category}}</a><i class="icon-angle-right"></i></h3></li>
+                <li class="active"><h6 style="color:#ffffff;">{{project.title}}</h6></li>
+              </ul>
+              <!-- <h2></h2> -->
+            </div>
+          </div>
+          <div class="span8">
+            <ul class="breadcrumb">
+              <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+              <li><a href="{% url 'project' %}">Projects</a><i class="icon-angle-right"></i></li>
+              <li class="active">Project detail</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="span8">
+            <article>
+              <div class="top-wrapper">
+                <div class="post-heading">
+                  <!-- <h3><a href="#">This is an example of portfolio detail</a></h3> -->
+                </div>
+                <!-- start flexslider -->
+                <div class="flexslider">
+                  
+                  <ul class="slides">
+                    {% for image in project.images.all %}
+                    <li>
+                      <img src="{{image.photos.url}}" alt="" />
+                    </li>
+                    {% endfor %}
+                  </ul>
+                 
+                </div>
+                <!-- end flexslider -->
+              </div>
+              <h6>Description</h6>
+              <p style="text-align: justify;">
+                {{project.description}}
+              </p>
+            </article>
+          </div>
+          <div class="span4">
+            <aside class="right-sidebar">
+              <div class="widget">
+                <h5 class="widgetheading">Project Info.</h5>
+                <ul class="folio-detail">
+                  <li><label style="margin-right:10px;">Project name :</label> {{project.title}}</li>
+                  <li><label style="margin-right:40px;">Category :</label>{{project.category}}</li>
+                  <li><label style="margin-right:60px;">Client :</label> {{project.client_name}}</li>
+                  <li><label style="margin-right:20px;">Project date :</label> {{project.created_on}}</li>
+                  <li><label style="margin-right:50px;">Duration:</label>{{project.duration}}</li>
+                  <li><label style="margin-right:30px;">Project URL :</label><a href="{{project.project_url}}" target="_blank">{{project.title}}</a></li>
+                </ul>
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">Reviews</h5>
+                <blockquote>
+                  <p>The project was done perfectly.</p>
+                    
+                  </blockquote>
+                  <p>—{{project.client_name}}</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
