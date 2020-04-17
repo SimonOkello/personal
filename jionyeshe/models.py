@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth import get_user_model
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 
 # Create your models here.
 User = get_user_model()
@@ -15,13 +18,30 @@ class Category(models.Model):
 
 
 class Profile(models.Model):
-    firstname = models.CharField(max_length=100)
-    lastname = models.CharField(max_length=100)
-    bio = models.TextField()
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
     profession = models.CharField(max_length=100)
     age = models.CharField(max_length=4)
     gender = models.CharField(max_length=10)
+    phone = models.CharField(max_length=255, blank=True,
+                             null=True)
+    website = models.URLField(
+        max_length=128,
+        db_index=True,
+        unique=True,
+        blank=True)
     skills = models.CharField(max_length=200)
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.profile.save()
 
 
 class Project(models.Model):

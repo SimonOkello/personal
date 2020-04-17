@@ -1,0 +1,455 @@
+{% extends 'jionyeshe/base.html' %} 
+{% load static %} 
+{% block content %}
+<!-- end header -->
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        {% if user.is_authenticated %}
+        <div class="inner-heading">
+          <h2>
+            <b>{{user.username}}</b>
+          </h2>
+          <p>{{user.profile.profession}}<b></b></p>
+        </div>
+        {% endif %}
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li>
+            <a href="#"><i class="icon-home"></i></a
+            ><i class="icon-angle-right"></i>
+          </li>
+          <li><a href="#">Profile</a><i class="icon-angle-right"></i></li>
+          <li class="active">Profile detail</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        <article>
+          <div class="row">
+            <div class="content">
+              <div class="module">
+                <div class="module-body">
+                  <div class="profile-head media">
+                    <a href="#" class="media-avatar pull-left">
+                      <img src="{% static 'jionyeshe/img/avatar.png' %} " />
+                    </a>
+                    <div class="media-body">
+                      <h4>
+                        {% if user.is_authenticated %}{{user.username}}
+                        {% endif%} <small>Offline</small>
+                      </h4>
+                      <p class="profile-brief">
+                        {{user.profile.bio}}
+                      </p>
+                      <div class="profile-details muted">
+                        <a href="#" class="btn"
+                          ><i class="icon-plus shaded"></i>Edit Profile
+                        </a>
+                        <a href="#" class="btn"
+                          ><i class="icon-envelope-alt shaded"></i>messages
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="profile-tab nav nav-tabs">
+                    <li class="active">
+                      <a href="#aboutme" data-toggle="tab">About Me</a>
+                    </li>
+                    <li>
+                      <a href="#work" data-toggle="tab">Work Experience</a>
+                    </li>
+                    <li><a href="#skills" data-toggle="tab">Skills</a></li>
+                    <li><a href="#github" data-toggle="tab">My Github</a></li>
+                    <li>
+                      <a href="#education" data-toggle="tab">Education</a>
+                    </li>
+                    <!-- <li><a href="#aboutme" data-toggle="tab">About Me</a></li> -->
+                  </ul>
+                  <div class="profile-tab-content tab-content">
+                    <div class="tab-pane fade active in" id="aboutme">
+                      {% if user.is_authenticated %}
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td><b>First Name</b></td>
+                          <td>{{user.first_name}}</td>
+                        </tr>
+                        <tr>
+                          <td><b>Last Name</b></td>
+                          <td>{{user.last_name}}</td>
+                        </tr>
+                         <tr>
+                          <td><b>Gender</b></td>
+                          <td>{{user.profile.gender}}</td>
+                        </tr>
+                        <tr>
+                          <td><b>Age</b></td>
+                          <td>{{user.profile.age}} years</td>
+                        </tr>
+                        <tr>
+                          <td><b>Email</b></td>
+                          <td>{{user.email}}</td>
+                        </tr>
+                        <tr>
+                          <td><b>Phone Number</b></td>
+                          <td>{{user.profile.phone}}</td>
+                        </tr>
+                        <tr>
+                          <td><b>Website</b></td>
+                          <td><a href="{{user.profile.website}}" target="blank">{{user.profile.website}}</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
+                    </div>
+                    <div class="tab-pane fade" id="work">
+                      <div class="module-option clearfix">
+                        <div class="content">
+                <div class="item">
+                  <h3 class="experience">
+                    Co-Founder & Lead Developer -
+                    <span class="place"><a href="#">Startup Hub</a></span>
+                    <span class="year">(2014 - Present)</span>
+                  </h3>
+                  <p style="text-align:justify;">
+                    Aenean leo ligula, porttitor eu, consequat vitae, eleifend
+                    ac, enim. Aliquam lorem ante, dapibus in, viverra quis,
+                    feugiat a, tellus. Phasellus viverra nulla ut metus varius
+                    laoreet. Donec vitae sapien ut libero venenatis faucibus.
+                    Nullam quis ante. Etiam sit amet orci eget eros faucibus
+                    tincidunt.
+                  </p>
+                </div>
+                <!--//item-->
+                <div class="item">
+                  <h3 class="experience">
+                    Software Engineer -
+                    <span class="place"><a href="#">Google</a></span>
+                    <span class="year">(2013 - 2014)</span>
+                  </h3>
+                  <p>
+                    Vivamus a tortor eu turpis pharetra consequat quis non
+                    metus. Aliquam aliquam, orci eu suscipit pellentesque,
+                    mauris dui tincidunt enim. Sed fringilla mauris sit amet
+                    nibh. Donec sodales sagittis magna.
+                  </p>
+                </div>
+                <!--//item-->
+
+                <div class="item">
+                  <h3 class="experience">
+                    Software Engineer -
+                    <span class="place"><a href="#">eBay</a></span>
+                    <span class="year">(2012 - 2013)</span>
+                  </h3>
+                  <p>
+                    Maecenas tempus, tellus eget condimentum rhoncus, sem quam
+                    semper libero, sit amet adipiscing sem neque sed ipsum.
+                  </p>
+                </div>
+                <!--//item-->
+              </div>
+                      </div>
+                      <!-- <div class="module-body">
+                        heey
+                      </div> -->
+                    </div>
+                    
+                    <div class="tab-pane fade" id="skills">
+                      <div class="module-option clearfix">
+                        <div class="stream-list">
+                          <div class="media stream">
+                            <!-- <a href="#" class="media-avatar medium pull-left">
+                                                    <img src="images/user.png">
+                                                </a> -->
+                            <div class="media-body">
+                              <div class="span6">
+                                <!-- {{user.profile.skills}} -->
+                                <label>Web design:</label>
+                                <div
+                                  class="progress progress-info progress-striped active">
+                                  <div class="bar" style="width: 90%;"></div>
+                                </div>
+                                <label>Wordpress :</label>
+                                <div
+                                  class="progress progress-success progress-striped active">
+                                  <div class="bar" style="width: 60%;"></div>
+                                </div>
+                                <label>Photoshop :</label>
+                                <div
+                                  class="progress progress-warning progress-striped active">
+                                  <div class="bar" style="width: 80%;"></div>
+                                </div>
+                                <label>Ilustrator :</label>
+                                <div
+                                  class="progress progress-danger progress-striped active">
+                                  <div class="bar" style="width: 40%;"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--/.media .stream-->
+                        </div>
+                        <!--/.stream-list-->
+                      </div>
+                      <!-- <div class="module-body">
+                        heey
+                      </div> -->
+                    </div>
+                    <!-- GITHUB -->
+                    <div class="tab-pane fade" id="github">
+                      <div class="module-option clearfix">
+                        <div class="section-inner">
+                        <h2 class="heading" style="font-weight: bold;font-size: 1rem;">My GitHub</h2>
+
+                        <div id="github-graph" class="github-graph">
+                        </div>
+                        <!--//github-graph-->
+
+
+                        <div id="ghfeed" class="ghfeed"></div>
+              <!--//ghfeed-->
+            </div>
+                      </div>
+                      <!-- <div class="module-body">
+                        heey
+                      </div> -->
+                    </div>
+                    <!-- EDUCATION -->
+                    <div class="tab-pane fade" id="education">
+                      <div class="module-option clearfix">
+                        <div class="content">
+                <div class="item">
+                  <h3 class="education">
+                    <i class="fa fa-graduation-cap"></i> Bsc Business Information Technology
+                  </h3>
+                  <h4 class="university">
+                    JKUAT Juja Main Campus.
+                    <span class="year">(2014-2018)</span>
+                  </h4>
+                </div>
+                <!--//item-->
+                <!-- <div class="item">
+                  <h3 class="title">
+                    <i class="fas fa-graduation-cap"></i> BSc Computer Science
+                  </h3>
+                  <h4 class="university">
+                    University of Bristol <span class="year">(2008-2011)</span>
+                  </h4>
+                </div> -->
+                <!--//item-->
+              </div>
+                      </div>
+                      <!-- <div class="module-body">
+                        Footer
+                      </div> -->
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+                <!--/.module-body-->
+              </div>
+              <!--/.module-->
+            </div>
+            <!--/.content-->
+            <!--/.span9-->
+          </div>
+          <br />
+          <!-- divider -->
+          <div class="row">
+            <div class="span7">
+              <div class="solidline"></div>
+            </div>
+          </div>
+          <!-- end divider -->
+
+          <div class="row">
+            <div class="span8">
+              <h4><strong>Clients</strong></h4>
+              <ul
+                id="mycarousel"
+                class="jcarousel-skin-tango recent-jcarousel clients"
+              >
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client1.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client2.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client3.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client4.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client5.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client6.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client1.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client2.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client3.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client4.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client5.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img
+                      src="{% static 'jionyeshe/img/dummies/clients/client6.png' %}"
+                      class="client-logo"
+                      alt=""
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="solidline"></div>
+        </article>
+      </div>
+      <div class="span4">
+        <aside class="right-sidebar">
+          <div class="widget">
+            <h5 class="widgetheading"><b>Projects</b></h5>
+            {% for category in cat_lists %}
+            <ul class="cat">
+              <li>
+                <i class="icon-angle-right"></i
+                ><a href="{% url 'jionyeshe:category' category.id %}"
+                  >{{category.name}}</a
+                ><span></span>
+              </li>
+            </ul>
+            {% endfor %}
+          </div>
+          <div class="widget">
+            <h5 class="widgetheading"><b>Reviews</b></h5>
+            <div class="media">
+              <a href="#" class="thumbnail pull-left"
+                ><img src="{% static 'jionyeshe/img/avatar.png' %}" alt=""
+              /></a>
+              <div class="media-body">
+                <div class="media-content">
+                  <h6><span>April 20, 2020</span> | Karen medisson</h6>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                    scelerisque ante sollicitudin commodo. Cras purus odio,
+                    vestibulum in vulputate at, tempus viverra turpis. Fusce
+                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                    congue felis in faucibus.
+                  </p>
+                  <!-- <a href="#" class="align-right">Reply comment</a> -->
+                </div>
+              </div>
+            </div>
+            <div class="media">
+              <a href="#" class="thumbnail pull-left"
+                ><img src="{% static 'jionyeshe/img/avatar.png' %}" alt=""
+              /></a>
+              <div class="media-body">
+                <div class="media-content">
+                  <h6><span>March 20, 2020</span> | Karen medisson</h6>
+                  <p>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                    scelerisque ante sollicitudin commodo. Cras purus odio,
+                    vestibulum in vulputate at, tempus viverra turpis. Fusce
+                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+                    congue felis in faucibus.
+                  </p>
+                  <!-- <a href="#" class="align-right">Reply comment</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

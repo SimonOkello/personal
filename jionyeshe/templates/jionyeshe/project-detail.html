@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'jionyeshe/base.html' %}
 {% load static %}
 {% block title %} Jionyeshe-Project details {% endblock %}
 {% block content %}
@@ -17,7 +17,7 @@
           <div class="span8">
             <ul class="breadcrumb">
               <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
-              <li><a href="{% url 'project' %}">Projects</a><i class="icon-angle-right"></i></li>
+              <li><a href="{% url 'jionyeshe:project' %}">Projects</a><i class="icon-angle-right"></i></li>
               <li class="active">Project detail</li>
             </ul>
           </div>

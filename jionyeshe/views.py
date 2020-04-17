@@ -7,32 +7,33 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    return render(request, 'jionyeshe/index.html', {})
 
-@login_required
+
 def profile(request):
+    
     context = {'cat_lists': Category.objects.all()}
 
-    return render(request, 'profile.html', context)
+    return render(request, 'jionyeshe/profile.html', context)
 
 
 def category(request, **kwargs):
     context = {'category_projects': Project.objects.filter(
         category_id=kwargs.get('pk')), 'cat_lists': Category.objects.all()}
 
-    return render(request, 'category.html', context)
+    return render(request, 'jionyeshe/category.html', context)
 
 
 def project(request):
     context = {'projects_lists': Project.objects.all().order_by('-created_on'), 'cat_lists': Category.objects.all()}
 
-    return render(request, 'project.html', context)
+    return render(request, 'jionyeshe/project.html', context)
 
 
 class ProjectDetail(DetailView):
     model = Project
-    template_name = 'project-detail.html'
+    template_name = 'jionyeshe/project-detail.html'
 
 
 def review(request):
-    return render(request, 'review.html', {})
+    return render(request, 'jionyeshe/review.html', {})
